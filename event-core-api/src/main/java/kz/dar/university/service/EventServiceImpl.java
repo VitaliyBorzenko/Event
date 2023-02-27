@@ -52,7 +52,7 @@ public class EventServiceImpl implements EventService {
 
     @Override
     public List<EventResponce> getAllEvents() {
-        return eventRepository.getEventEnyitiesBy().stream().map(post -> modelMapper.map(post, EventResponce.class)).collect(Collectors.toList());
+        return eventRepository.getEventEntitiesBy().stream().map(post -> modelMapper.map(post, EventResponce.class)).collect(Collectors.toList());
     }
 
     @Override

@@ -12,7 +12,7 @@ public interface EventRepository extends CrudRepository<EventEntity, Long> {
 
     EventEntity getEventEntityByEventId(String eventId);
 
-    List<EventEntity> getEventEnyitiesBy();
+    List<EventEntity> getEventEntitiesBy();
 
     @Transactional
     void deleteEventEntityByEventId(String eventId);

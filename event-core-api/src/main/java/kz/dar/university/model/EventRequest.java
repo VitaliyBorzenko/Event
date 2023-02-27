@@ -12,10 +12,10 @@ public class EventRequest {
     private String eventId;
     private String title;
     private String description;
-    private String StartDateAndTime;
-    private String EndDateAndTime;
+    private String startDateAndTime;
+    private String endDateAndTime;
     private Long photoId;
     private String category;
-    private String NumberOfVotes;
-    private String UserOwner;
+    private String numberOfVotes;
+    private String userOwner;
 }

@@ -22,15 +22,15 @@ public class EventEntity {
     @Column
     private String description;
     @Column
-    private String StartDateAndTime;
+    private String startDateAndTime;
     @Column
-    private String EndDateAndTime;
+    private String endDateAndTime;
     @Column
     private Long photoId;
     @Column
     private String category;
     @Column
-    private String NumberOfVotes;
+    private String numberOfVotes;
     @Column
     private String UserOwner;
 
