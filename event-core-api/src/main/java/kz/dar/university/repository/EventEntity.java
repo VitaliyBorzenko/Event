@@ -3,6 +3,7 @@ package kz.dar.university.repository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import reactor.util.annotation.Nullable;
 
 import javax.persistence.*;
 
@@ -15,23 +16,23 @@ public class EventEntity {
     @Id
     @GeneratedValue
     private Long id;
-    @Column
+    @Column(unique = true, name = "event_id")
     private String eventId;
-    @Column
+    @Column(nullable = false, length = 50)
     private String title;
-    @Column
+    @Column(nullable = false, length = 50)
     private String description;
-    @Column
+    @Column(nullable = false, length = 50)
     private String startDateAndTime;
-    @Column
+    @Column(nullable = false, length = 50)
     private String endDateAndTime;
-    @Column
+    @Column(nullable = false, length = 50)
     private Long photoId;
-    @Column
+    @Column(nullable = false, length = 50)
     private String category;
-    @Column
+    @Column(nullable = false, length = 50)
     private String numberOfVotes;
-    @Column
+    @Column(nullable = false, length = 50)
     private String UserOwner;
 
 }

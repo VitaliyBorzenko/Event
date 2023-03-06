@@ -6,6 +6,7 @@ import kz.dar.university.repository.EventEntity;
 import kz.dar.university.repository.EventRepository;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.stream.Collectors;
 @Service
 public class EventServiceImpl implements EventService {
 
+    @Autowired
     private EventRepository eventRepository;
 
     private static ModelMapper modelMapper = new ModelMapper();
@@ -27,10 +29,9 @@ public class EventServiceImpl implements EventService {
     @Override
     public EventResponce createEvent(EventRequest eventRequest) {
         eventRequest.setEventId(UUID.randomUUID().toString());
-        EventEntity eventEntity = modelMapper.map(eventRequest, EventEntity.class);
-
-        return modelMapper.map(eventEntity, EventResponce.class);
-
+        EventEntity entity = modelMapper.map(eventRequest, EventEntity.class);
+        EventEntity result = eventRepository.save(entity);
+        return modelMapper.map(result, EventResponce.class);
     }
 
     @Override
