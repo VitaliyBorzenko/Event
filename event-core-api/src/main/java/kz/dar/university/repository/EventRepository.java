@@ -18,4 +18,6 @@ public interface EventRepository extends CrudRepository<EventEntity, Long> {
     void deleteEventEntityByEventId(String eventId);
 
 
+    List<EventEntity> getEventEntitiesByCategory(String category);
+
 }

@@ -45,6 +45,7 @@ public class EventServiceImpl implements EventService {
         return modelMapper.map(eventEntity, EventResponce.class);
     }
 
+
     @Override
     public EventResponce getEventById(String eventId) {
         EventEntity eventEntity = eventRepository.getEventEntityByEventId(eventId);
@@ -60,4 +61,11 @@ public class EventServiceImpl implements EventService {
     public void deleteEventById(String eventId) {
         eventRepository.deleteEventEntityByEventId(eventId);
     }
+
+    @Override
+    public List<EventEntity> filter(String category) {
+        return eventRepository.getEventEntitiesByCategory(category);
+    }
+
+
 }
