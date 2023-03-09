@@ -28,8 +28,8 @@ public class EventController {
         return eventService.getAllEvents();
     }
 
-    @GetMapping
-    public EventResponce getEventById(@RequestParam String eventId){
+    @GetMapping("/{eventId}")
+    public EventResponce getEventById(@PathVariable String eventId){
         return eventService.getEventById(eventId);
     }
 
@@ -38,14 +38,14 @@ public class EventController {
         return eventService.createEvent(eventRequest);
     }
 
-    @PutMapping
-    public EventResponce updateEvent(@RequestParam String eventId, @RequestBody EventRequest eventRequest){
+    @PutMapping("/{eventId}")
+    public EventResponce updateEvent(@PathVariable String eventId, @RequestBody EventRequest eventRequest){
        eventRequest.setEventId(eventId);
         return eventService.updateEvent(eventRequest);
     }
 
-    @DeleteMapping
-    public void deleteEventById(@RequestParam String eventId){
+    @DeleteMapping("/{eventId}")
+    public void deleteEventById(@PathVariable String eventId){
         eventService.deleteEventById(eventId);
     }
 
